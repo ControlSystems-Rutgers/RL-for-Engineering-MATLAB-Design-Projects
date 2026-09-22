@@ -48,7 +48,7 @@ for i=1:15
     % evaluating approximate states and control
 for j=1:100
      x(:,j)=((Ad-Bd*Fi)^k(j))*x0;
-     u(j)=-Fi*x(:,j);
+     u(:,j)=-Fi*x(:,j);
 end
 % plotting approximate states, control, performance
 figure (1)
@@ -56,7 +56,7 @@ stairs(k,x(1,:));
 hold on
 xlabel('Time [s]');ylabel('State variable x1'); grid
 figure (2)
-stairs(k,u(k));
+stairs(k,u(:,k));
 hold on
 xlabel('Time [s]');ylabel('Approximate control'); grid
 axis([0 20 -8 10])
