@@ -17,8 +17,7 @@ CO=ctrb(A,B); rankCO=rank(CO)
 % the system is controllable.
 OM=obsv(A,R1); rOM=rank(OM) 
 % Rank equal to n implies observability.
-% Note that the same rank is obtained by using             
-% obsv(A,Chol(R1)).
+% Note that the same rank is obtained by using obsv(A,Chol(R1)).
 % Direct Solution of the Optimal LQ Problem
 [Fopt,P]=lqr(A,B,R1,R2);
 Jopt=0.5*x0'*P*x0
